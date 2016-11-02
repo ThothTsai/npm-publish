@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>如何将自己的项目发布到npm的public库和私有库中？</title>
+	</head>
+<body>
+<h1>如何将自己的项目发布到<strong>npm</strong>的<strong>public</strong>库和私有库中？</h1>
+
+<h2>将项目发布到<strong>npm</strong>的<strong>public</strong>库中</h2>
+
+<h3>在npm官网上注册<strong>npm</strong>帐号</h3>
+
+<p>官网地址：<strong><a href="https://www.npmjs.com">https://www.npmjs.com</a></strong></p>
+
+<p>点击官网右上角 <strong>sign up</strong> 进行注册</p>
+
+<hr />
+
+<h3>登录<strong>npm</strong></h3>
+
+<p>在命令行中输入 <strong><em>npm login</em></strong></p>
+
+<p>填写刚才注册的 <strong><em>username</em></strong> 并按回车</p>
+
+<p>填写密码</p>
+
+<p>填写邮箱</p>
+
+<p>当显示 <em><strong>Logged in as username on https://registry.npmjs.org/.</strong></em> 表示登录成功</p>
+
+<hr />
+
+<h3>在<strong>public</strong>库中发布项目</h3>
+
+<p>进入<strong>package.json</strong>所在的文件夹</p>
+
+<p>在命令行中输入 <strong><em>npm publish</em></strong></p>
+
+<p>显示 <strong><em>+ packagename@version</em></strong> (如：<strong><em>+ toto@1.1.1</em></strong>) 表示发布成功 </p>
+
+<p>你可以在<strong>npm</strong>的官网上搜索到你发布的项目</p>
+
+<p>其他人可以通过登录和你相同的<strong>npm</strong>镜像，然后在命令行输入 <strong><em>npm install packagename</em></strong> (如: <strong><em>npm install toto</em></strong>)对你发布的项目进行安装</p>
+
+<hr />
+
+<h3>取消已发布在<strong>public</strong>库中的项目</h3>
+
+<p>登录 <strong>npm</strong></p>
+
+<p>在命令行中输入 <strong><em>npm unpublish packagename@version</em></strong> (如：<strong><em>npm unpublish toto@1.1.1</em></strong>)</p>
+
+<p>显示 <em><strong>- packagenme@version</strong></em> 表示成功取消发布</p>
+
+<p><strong>npm</strong>官网不在能搜索到已取消发布的项目</p>
+
+<hr />
+
+<h3>用命令行注册<strong>npm</strong>帐号</h3>
+
+<p>在命令行中输入 <strong><em>npm adduser</em></strong></p>
+
+<p>输入用户名、密码、邮箱</p>
+
+<p>当显示 <em><strong>Logged in as username on https://registry.npmjs.org/.</strong></em> 表示注册并登录成功</p>
+
+<hr />
+
+<h3>登录不成功</h3>
+
+<p>检查用户名密码是否正确</p>
+
+<p>用户名密码正确，可能是当前镜像链接不是你当前用户所注册的镜像链接，在命令行中输入 <strong><em>npm set registry http://registry.npmjs.org/</em></strong> 完成设置后再重新登录<strong>npm</strong>帐号即可</p>
+
+<hr />
+
+<hr />
+
+<h2>将项目发布到<strong>npm</strong>私有库中</h2>
+
+<h3>注册<strong>npm</strong>帐号</h3>
+
+<p>私有库限制<strong>adduser</strong>时，联系<strong>npm</strong>私有库管理者为你添加帐号</p>
+
+<p>私有库未限制<strong>adduser</strong>时，可通过<strong> set registry </strong>后直接在命令行中输入 <strong><em>npm adduser</em></strong> 进行注册</p>
+
+<hr />
+
+<h3>登录<strong>npm</strong> 私有库</h3>
+
+<p>首先<strong>npm</strong>需要连接到私有库 (<strong>set registry</strong>),在命令行中输入 <strong><em>npm set registry http://192.168.xxx.xxx:xxxx</em></strong> (<strong><em>http://192.168.xxx.xxx:xxxx</em></strong>为私有库地址，不同的私有库地址不同，注意不要省略&quot;<strong><em>http://</em></strong>&quot;)</p>
+
+<p>显示 <strong><em>Logged in as username on http://192.168.xxx.xxx:xxxx/.</em></strong> 表示登录成功</p>
+
+<hr />
+
+<h3>在私有库中发布项目</h3>
+
+<p>进入<strong>package.json</strong>所在的文件夹</p>
+
+<p>在命令行中输入 <strong><em>npm publish</em></strong></p>
+
+<p>显示 <strong><em>+ packagename@version</em></strong> 表示发布成功</p>
+
+<p>你可以在 <strong><em>http://192.168.xxx.xxx:xxxx </em></strong>上看到你发布的项目</p>
+
+<p>其他人可以通过登录该私有库，然后在命令行输入 <strong><em>npm install packagename</em></strong> (如：<strong><em>npm install toto</em></strong>)对你发布的项目进行安装</p>
+
+<hr />
+
+<h3>取消已发布在私有库中的项目</h3>
+
+<p>登录 <strong>npm</strong>私有库</p>
+
+<p>在命令行中输入 <strong><em>npm unpublish packagename@version</em></strong>(如：<strong><em>npm unpublish toto@1.1.1</em></strong>)</p>
+
+<p>显示 <em><strong>- packagenme@version</strong></em> 表示成功取消发布</p>
+
+<p><strong>npm</strong>私有库中不再看到已取消发布的项目</p>
+
+</body>
+</html>
+
